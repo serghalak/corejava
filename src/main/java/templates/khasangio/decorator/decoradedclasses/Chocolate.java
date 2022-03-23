@@ -16,6 +16,6 @@ public class Chocolate extends Goodies {
 
     @Override
     public String getDescription() {
-        return baking.getDescription() + " with chockolate";
+        return baking.getDescription() + " with chocolate";
     }
 }

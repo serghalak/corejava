@@ -10,4 +10,9 @@ public class Cake implements Baking {
     public String getDescription() {
         return "Cake";
     }
+
+    @Override
+    public void about() {
+        System.out.println(getDescription() + " " + getPrice());
+    }
 }

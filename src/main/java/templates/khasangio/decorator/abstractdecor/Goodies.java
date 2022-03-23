@@ -8,4 +8,9 @@ public abstract class Goodies implements Baking {
     public Goodies(Baking baking) {
         this.baking = baking;
     }
+
+    @Override
+    public void about() {
+        System.out.println(getDescription() + " " + getPrice());
+    }
 }
