@@ -1,9 +1,6 @@
 package io;
 
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
+import java.io.*;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLConnection;
@@ -11,7 +8,34 @@ import java.net.URLConnection;
 public class GolovachIO {
 
     public static void main(String[] args) {
-        readFromInternet("http://www.google.com", "c://google.txt");
+        justCheckSomething();
+        //readFromInternet("http://www.google.com", "c://google.txt");
+    }
+
+    private static void justCheckSomething(){
+        try(FileInputStream fileInputStream = new FileInputStream("c://test.txt")) {
+            int b;
+            char ch;
+            System.out.println(fileInputStream.available());
+            for (int i = 0; i < 9; i++){
+
+                System.out.println("i= " + i + "char: " + (char) fileInputStream.read());
+            }
+
+            while((b = fileInputStream.read()) != -1){
+
+                System.out.println("b = " + b);
+            }
+
+
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        int n = 79 / 40;
+        System.out.println("n = " + n);
     }
 
     private static void readFromInternet(String stringUrl, String pathToWrite){
